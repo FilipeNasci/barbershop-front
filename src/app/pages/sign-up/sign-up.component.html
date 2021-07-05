@@ -1,0 +1,50 @@
+<div id="signup">
+    <div class="card-signup">
+        <img src="../../../assets/img/signup.jpg" alt="barber" />
+
+        <div class="container-signup">
+            <form>
+
+                <div class="input-main-component">
+                    <label for="perfil">Perfil*</label>
+                    <select name="perfil" id="perfil" required>
+                        <option *ngFor="let p of perfil" value="p">{{p}}</option>
+                    </select>
+                </div>
+                
+                <div class="input-main-component">
+                    <label for="nome">Nome*</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="input-main-component">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email">
+                </div>
+
+                <div class="input-main-component">
+                    <label for="phone">Telefone</label>
+                    <input type="text" id="phone">
+                </div>
+
+                <div class="input-main-component">
+                    <label for="cpf">Cpf*</label>
+                    <input type="number" id="cpf">
+                </div>
+
+                <div class="input-main-component">
+                    <label for="password">Senha*</label>
+                    <input type="password" id="password">
+                </div>
+
+                <div class="input-main-component">
+                    <label for="passwordConfirmation">Confirmar senha*</label>
+                    <input type="password" id="passwordConfirmation">
+                </div>
+            </form>
+
+            <button type="submit" class="btn-main-component">Cadastrar</button>
+            <br><br>
+        </div>
+    </div>
+</div>

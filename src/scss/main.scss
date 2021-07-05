@@ -1,0 +1,59 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: $white;
+  font: georgia;
+}
+
+.btn-main-component {
+  background-color: $btn-color;
+  color: $white;
+  text-transform: uppercase;
+  border-style: none;
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.input-main-component {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  input {
+    border: 2px solid black;
+    height: 35px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  input[type='password'] {
+    border: 2px solid black;
+    height: 35px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  select {
+    border: 2px solid black;
+    height: 35px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@mixin display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
