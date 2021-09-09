@@ -1,0 +1,65 @@
+<div id="employees">
+    <div class="progress" [hidden]="hidden">
+        <span class="progress-bar" style="width: 100%"></span>
+    </div>
+
+    <div class="" *ngFor="let employee of employees">
+        <app-empolyee-card [employee]="employee"></app-empolyee-card>
+    </div>
+    
+</div>
+<!-- <div id="employees">
+    <div class="card">
+        <div class="center-content">
+            <img src="../../../assets/img/employee.png" alt="">
+        </div>
+
+        <form [formGroup]="form">
+            <div class="info">
+                <div class="input-main-component">
+                    <label for="employees">Colaboradores</label>
+                    <select name="employees" (change)="selectEmpoyee()" formControlName="employee">
+                        <option *ngFor="let employee of employees" [value]="employee.user_id">{{ employee.firstName }}</option>
+                    </select>
+                </div>
+                <div id="modal">
+                    <div class="input-main-component">
+                        <label for="name">Nome*</label>
+                        <input type="name" id="name" [value]="employee.firstName" formControlName="firstName">
+                    </div>
+
+                    <div class="input-main-component">
+                        <label for="lastName">Sobrenome*</label>
+                        <input type="name" id="lastName" [value]="employee.lastName" formControlName="lastName">
+                    </div>
+
+                    <div class="input-main-component">
+                        <label for="perfil">Perfil</label>
+                        <select name="perfil" id="perfil" formControlName="perfil">
+                            <option *ngFor="let p of perfis" [selected]="p == employee.user_type">{{ p }}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-main-component">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" [value]="employee.email" formControlName="email">
+                    </div>
+
+                    <div class="input-main-component">
+                        <label for="phone">Telefone</label>
+                        <input type="text" id="phone" [value]="employee.phone" formControlName="phone">
+                    </div>
+
+                    <div class="input-main-component">
+                        <label for="cpf">Cpf*</label>
+                        <input type="string" id="cpf" [value]="employee.cpf" formControlName="cpf">
+                    </div>
+                    <br>
+                    <br>
+                    <button class="btn-main-component" (click)="atualizar()">Atualizar</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->

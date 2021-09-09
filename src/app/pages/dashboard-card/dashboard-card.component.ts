@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-card',
@@ -9,10 +10,17 @@ export class DashboardCardComponent implements OnInit {
 
   @Input() image: string = ''
   @Input() text: string = ''
+  @Input() target: string = ''
   
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  redirect() {
+    this.router.navigate([`/${this.target}`])
   }
 
 }

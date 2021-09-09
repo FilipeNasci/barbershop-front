@@ -8,6 +8,23 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { DashboardCardComponent } from './pages/dashboard-card/dashboard-card.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { EmployeesComponent } from './pages/employees/employees.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignupService } from './service/signup/signup.service';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { SalesComponent } from './pages/sales/sales.component';
+import { LoginService } from './service/login/login.service';
+import { CookieService } from 'ngx-cookie-service';
+import { EmployeesService } from './service/employees/employees.service';
+import { EmpolyeeCardComponent } from './pages/empolyee-card/empolyee-card.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+  dropSpecialCharacters: true
+  // dropSpecialCharacters: false
+  // o drop false, ao salvar mantem a mascara, comentado ele salva sem mascara
+}
 
 @NgModule({
   declarations: [
@@ -17,12 +34,18 @@ import { ScheduleComponent } from './pages/schedule/schedule.component';
     AdminDashboardComponent,
     DashboardCardComponent,
     ScheduleComponent,
+    EmployeesComponent,
+    SalesComponent,
+    EmpolyeeCardComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxMaskModule.forRoot(maskConfig)
   ],
-  providers: [],
+  providers: [SignupService, LoginService, CookieService, EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

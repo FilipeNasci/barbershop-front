@@ -52,6 +52,28 @@
   }
 }
 
+.panel {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.progress {
+  width: 100%;
+  height: 6px;
+  background-color: #e1e4e8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg,$dark-blue,$btn-color 17%,$light-blue 34%,#01feff 51%,$dark-blue 68%,$btn-color 85%,$light-blue);
+  background-size: 300% 100%;
+  animation: progress-animation 2s linear infinite;
+}
+
 @mixin display-flex {
   display: flex;
   justify-content: center;

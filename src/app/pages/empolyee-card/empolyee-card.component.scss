@@ -1,0 +1,12 @@
+@import '../../../scss/variables', '../../../scss/main.scss';
+
+.card {
+
+    cursor: pointer;
+    margin-bottom: 30px;
+
+    h3 {
+        color: $primary-color;
+        background-color: $light-blue;
+    }
+}
