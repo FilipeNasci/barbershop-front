@@ -18,6 +18,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { EmployeesService } from './service/employees/employees.service';
 import { EmpolyeeCardComponent } from './pages/empolyee-card/empolyee-card.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ForgotItComponent } from './pages/forgot-it/forgot-it.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
+import { PasswordService } from './service/password/password.service';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -37,15 +41,18 @@ const maskConfig: Partial<IConfig> = {
     EmployeesComponent,
     SalesComponent,
     EmpolyeeCardComponent,
+    ForgotItComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxMaskModule.forRoot(maskConfig)
+    NgxMaskModule.forRoot(maskConfig),
+    NgxPaginationModule
   ],
-  providers: [SignupService, LoginService, CookieService, EmployeesService],
+  providers: [SignupService, LoginService, CookieService, EmployeesService, PasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

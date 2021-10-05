@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeDTO } from 'src/model/employees/employee';
 
 @Component({
@@ -10,13 +11,18 @@ export class EmpolyeeCardComponent implements OnInit {
 
   @Input() employee: EmployeeDTO
   
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   edit() {
-    console.log('foi')
+    this.router.navigate(['/editEmployee'], {
+      queryParams: {user_id: this.employee.user_id}
+    })
+
   }
 
 }

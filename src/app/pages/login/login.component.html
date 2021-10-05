@@ -6,19 +6,19 @@
             <div class="container-login">
                 <div class="input-main-component">
                     <label htmlFor="email-login">Email</label>
-                    <input id="email-login" type="text" formControlName="email"/>
+                    <input id="email-login" type="text" formControlName="email" />
                 </div>
 
                 <div class="input-main-component">
                     <label htmlFor="password-login">Senha</label>
-                    <input id="password-login" type="password" formControlName="password"/>
+                    <input id="password-login" type="password" formControlName="password" />
                 </div>
 
                 <button class="btn-main-component" (click)="login()">entrar</button>
 
-                <!-- <h4>
-                    Não possui conta? <span routerLink="/signup">Cadastre-se</span>
-                </h4> -->
+                <h4>
+                    <span routerLink="/forgotit">Esqueceu sua senha? Clique aqui</span>
+                </h4>
             </div>
         </form>
     </div>

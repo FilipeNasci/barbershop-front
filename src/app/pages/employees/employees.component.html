@@ -1,12 +1,16 @@
 <div id="employees">
-    <div class="progress" [hidden]="hidden">
+    <div class="progress" [hidden]="loading">
         <span class="progress-bar" style="width: 100%"></span>
     </div>
 
-    <div class="" *ngFor="let employee of employees">
+    <div class="" *ngFor="let employee of employees | paginate: {
+    itemsPerPage: 5,
+    currentPage: offset,
+    totalItems: totalItems }">
         <app-empolyee-card [employee]="employee"></app-empolyee-card>
     </div>
-    
+    <pagination-controls (pageChange)="offset = $event;" nextLabel="Próximo" previousLabel="Anterior">
+    </pagination-controls>
 </div>
 <!-- <div id="employees">
     <div class="card">

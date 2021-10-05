@@ -10,11 +10,14 @@ import { EmployeeDTO } from 'src/model/employees/employee';
 })
 export class EmployeesComponent implements OnInit {
 
-  hidden: boolean;
+  loading: boolean;
   employees: EmployeeDTO[] = []
   perfis = ['Admin', 'Atendente', 'Teste']
   employee: EmployeeDTO
   form: FormGroup
+  totalItems: number
+  offset: number = 1
+  limit: number = 5
 
   constructor(
     private formBuilder: FormBuilder,
@@ -23,18 +26,23 @@ export class EmployeesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.hidden = false
+    this.loading = false
     this.getAllEmployees()
     this.inicializarForm()
   }
 
   getAllEmployees() {
-    this.hidden = false    
-    this.employeesService.listUsers().subscribe(res => {
+    this.loading = false  
+    this.employeesService.listUsers(this.limit, this.offset).subscribe(res => {
       this.employees = res
-      this.hidden = true
+      this.totalItems = res.length
+      this.loading = true
     })
 
+  }
+
+  teste() {
+    console.log('foi')
   }
 
   inicializarForm() {

@@ -16,12 +16,26 @@ export class EmployeesService extends AbstractService {
   constructor(http: HttpClient,
     private cookieService: CookieService) {
     super(http);
-   }
+  }
 
-   listUsers(): Observable<EmployeeDTO[]> {
+  listUsers(limit: number, offset: number): Observable<EmployeeDTO[]> {
     let headers = this.getHeaders()
-    let t = this.cookieService.get('barberAuthToken')
     headers = this.setToken(this.cookieService.get('barberAuthToken'), headers);
-    return this.http.get<EmployeeDTO[]>(this.url + this.relativePath, { headers })
+    console.log(this.url + this.relativePath  + '?take=' + limit + '?skip=' + offset)
+    return this.http.get<EmployeeDTO[]>(this.url + this.relativePath  + '?take=' + limit + '&skip=' + offset, { headers })
+  }
+
+  getUserById(user_id: string): Observable<EmployeeDTO> {
+    let headers = this.getHeaders()
+    headers = this.setToken(this.cookieService.get('barberAuthToken'), headers);
+    return this.http.get<EmployeeDTO>(this.url + this.relativePath + '/' + user_id, { headers })
+  }
+
+  getUserByEmail(email: string) {
+
+  }
+
+  getUserByCpf(cpf: string) {
+
   }
 }

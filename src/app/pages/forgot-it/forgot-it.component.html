@@ -1,0 +1,37 @@
+<div id="signup">
+    <div class="card-signup">
+
+        <div class="container-signup">
+
+            <form [formGroup]="form">
+                <div id="divEmail" [hidden]="!showEmail">
+                    <div class="input-main-component">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="email">
+                    </div>
+                </div>
+
+                <div id="divCpf" [hidden]="showEmail">
+                    <div class="input-main-component">
+                        <label for="cpf">Cpf*</label>
+                        <input type="string" id="cpf" formControlName="cpf" mask="000.000.000-00">
+                    </div>
+                </div>
+
+                <div class="radio">
+                    <div>
+                        <input type="radio" id="tipoCpf" name="tipoInput" value="email" (change)="changeForm('email')"
+                            checked>Email
+                    </div>
+                    <div>
+                        <input type="radio" id="tipoEmail" name="tipoInput" value="cpf" (change)="changeForm('cpf')">CPF
+                    </div>
+                </div>
+                <button type="submit" class="btn-main-component" (click)="checkIfUserExist()">Recadastrar senha</button>
+
+            </form>
+
+            <br><br>
+        </div>
+    </div>
+</div>
